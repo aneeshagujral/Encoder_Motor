@@ -14,11 +14,11 @@ void loop()
 {
   digitalWrite(13,HIGH);
   t=millis();   // counting milliseconds since the time arduino starts
-  Serial.println(t);  // displays time in milliseconds
+  
   if(t==60000*a)
   {
-    Serial.println(n);    //displays number of pulses after every 60 seconds
-    a++;
+      unsigned long f=(n/a);  //PPM (pulses/min)
+       a++;
   }
  }
 
