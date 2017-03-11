@@ -1,8 +1,9 @@
 unsigned long encA=2;
 float n=0;
-float r=1/768;  //RPR(Rev/pulse)
+float r=768;  //RPR(Rev/pulse)
 int a=1;
-unsigned long t;
+unsigned long t,PPM;
+float rpm;
 void setup()
 {
   Serial.begin(9600);
@@ -17,8 +18,10 @@ void loop()
   
   if(t==60000*a)
   {
-      unsigned long f=(n/a);  //PPM (pulses/min)
-      Serial.println(f);  //print PPM
+      PPM=(n/a);  //PPM (pulses/min)
+      rpm=PPM/r;
+      Serial.println("RPM=");
+      Serial.println(rpm);  //print RPM
        a++;
   }
  }
