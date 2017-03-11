@@ -18,6 +18,7 @@ void loop()
   if(t==60000*a)
   {
       unsigned long f=(n/a);  //PPM (pulses/min)
+      Serial.println(f);  //print PPM
        a++;
   }
  }
